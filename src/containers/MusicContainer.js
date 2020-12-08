@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const MusicContainer = () =>{
 
@@ -10,12 +10,16 @@ const MusicContainer = () =>{
         .then(data => setMusic(data))
     }
 
+    useEffect(() => {
+        getMusic()
+    }, [])
+
     return (
         <div classname = 'music-viewer'>
             <h1>Check out THESE tunes, turkey!</h1>
             <MusicContainer/>
         </div>
     )
-}
+};
 
-export default MusicContainer
+export default MusicContainer;
