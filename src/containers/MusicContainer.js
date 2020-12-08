@@ -5,7 +5,7 @@ const MusicContainer = () =>{
     const [music, setMusic] = useState({});
 
     const getMusic = () => {
-        fetch('https://itunes.apple.com/gb/rss/topsongs/limit=20/json')
+        fetch('https://itunes.apple.com/gb/rss/topsongs/limit=20')
         .then(res => res.json())
         .then(data => setMusic(data))
     }
